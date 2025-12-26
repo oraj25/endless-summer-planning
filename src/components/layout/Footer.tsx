@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   explore: [
@@ -10,7 +10,6 @@ const footerLinks = {
   company: [
     { name: "About Us", path: "/about" },
     { name: "Testimonials", path: "/testimonials" },
-    { name: "Travel Guide", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ],
   legal: [
@@ -21,10 +20,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "Youtube" },
+  { icon: Facebook, href: "https://www.facebook.com/share/1EsZaNbGtG/?mibextid=wwXIfr", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/endless_summer_tours", label: "Instagram" },
+  { icon: Youtube, href: "https://www.youtube.com/@Endless_Summer_Tours", label: "Youtube" },
 ];
 
 export const Footer = () => {
@@ -44,6 +42,8 @@ export const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors"
                   aria-label={social.label}
                 >
@@ -94,19 +94,19 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-primary-foreground/70">
-                  123 Galle Road, Colombo 03, Sri Lanka
+                  58/23, Somathalagala 3rd Lane, Gangodawilla, Nugegoda, Sri Lanka
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+94112345678" className="text-primary-foreground/70 hover:text-primary-foreground">
-                  +94 11 234 5678
+                <a href="tel:+94770719741" className="text-primary-foreground/70 hover:text-primary-foreground">
+                  +94 77 071 9741
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:hello@endlesssummer.lk" className="text-primary-foreground/70 hover:text-primary-foreground">
-                  hello@endlesssummer.lk
+                <a href="mailto:esummertours@gmail.com" className="text-primary-foreground/70 hover:text-primary-foreground">
+                  esummertours@gmail.com
                 </a>
               </li>
             </ul>
@@ -118,7 +118,7 @@ export const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/50 text-sm">
-            © {new Date().getFullYear()} Endless Summer Sri Lanka. All rights reserved.
+            © {new Date().getFullYear()} Endless Summer. All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (
