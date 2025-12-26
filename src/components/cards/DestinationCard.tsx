@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface DestinationCardProps {
   name: string;
   image: string;
   description: string;
-  slug: string;
+  wikiUrl: string;
   className?: string;
 }
 
@@ -14,12 +13,14 @@ export const DestinationCard = ({
   name,
   image,
   description,
-  slug,
+  wikiUrl,
   className,
 }: DestinationCardProps) => {
   return (
-    <Link
-      to={`/destinations/${slug}`}
+    <a
+      href={wikiUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-card hover:shadow-glow transition-all duration-500",
         className
@@ -42,10 +43,10 @@ export const DestinationCard = ({
           {description}
         </p>
         <div className="flex items-center gap-2 text-primary font-medium">
-          <span>Explore</span>
-          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <span>Learn More</span>
+          <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
-    </Link>
+    </a>
   );
 };
