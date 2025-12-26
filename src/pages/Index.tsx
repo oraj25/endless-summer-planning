@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { DestinationCard } from "@/components/cards/DestinationCard";
 import { TourCard } from "@/components/cards/TourCard";
-import { ExperienceCard } from "@/components/cards/ExperienceCard";
 import { TestimonialCard } from "@/components/cards/TestimonialCard";
 import { FeatureCard } from "@/components/cards/FeatureCard";
 import { Layout } from "@/components/layout/Layout";
@@ -15,9 +14,6 @@ import ellaImage from "@/assets/ella.jpg";
 import galleImage from "@/assets/galle.jpg";
 import kandyImage from "@/assets/kandy.jpg";
 import yalaImage from "@/assets/yala-safari.jpg";
-import surfingImage from "@/assets/surfing.jpg";
-import whaleImage from "@/assets/whale-watching.jpg";
-
 const destinations = [
   {
     name: "Sigiriya",
@@ -72,33 +68,6 @@ const tours = [
     groupSize: "2-10",
     price: 799,
     slug: "coastal-paradise",
-  },
-];
-
-const experiences = [
-  {
-    name: "Surfing Adventures",
-    image: surfingImage,
-    description: "Ride world-class waves at Arugam Bay and Weligama",
-    slug: "surfing",
-  },
-  {
-    name: "Wildlife Safaris",
-    image: yalaImage,
-    description: "Spot leopards, elephants, and exotic wildlife",
-    slug: "wildlife-safari",
-  },
-  {
-    name: "Whale Watching",
-    image: whaleImage,
-    description: "Witness majestic blue whales off Mirissa coast",
-    slug: "whale-watching",
-  },
-  {
-    name: "Cultural Tours",
-    image: kandyImage,
-    description: "Explore ancient temples and living traditions",
-    slug: "cultural-tours",
   },
 ];
 
@@ -257,20 +226,6 @@ const Index = () => {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </Button>
-        </div>
-      </Section>
-
-      {/* Experiences */}
-      <Section>
-        <SectionHeader
-          subtitle="Experiences"
-          title="Adventures Await"
-          description="Immerse yourself in unforgettable activities that bring you closer to nature and culture."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {experiences.map((experience) => (
-            <ExperienceCard key={experience.slug} {...experience} />
-          ))}
         </div>
       </Section>
 

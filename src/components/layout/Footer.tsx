@@ -5,7 +5,6 @@ const footerLinks = {
   explore: [
     { name: "Destinations", path: "/destinations" },
     { name: "Tours & Packages", path: "/tours" },
-    { name: "Experiences", path: "/experiences" },
     { name: "Gallery", path: "/gallery" },
   ],
   company: [
