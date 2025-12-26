@@ -19,25 +19,25 @@ const destinations = [
     name: "Sigiriya",
     image: sigiriyaImage,
     description: "Ancient rock fortress rising majestically above the jungle",
-    slug: "sigiriya",
+    wikiUrl: "https://en.wikipedia.org/wiki/Sigiriya",
   },
   {
     name: "Ella",
     image: ellaImage,
     description: "Scenic hill country with iconic train rides and tea plantations",
-    slug: "ella",
+    wikiUrl: "https://en.wikipedia.org/wiki/Ella,_Sri_Lanka",
   },
   {
     name: "Galle",
     image: galleImage,
     description: "Historic Dutch fort city with colonial charm",
-    slug: "galle",
+    wikiUrl: "https://en.wikipedia.org/wiki/Galle",
   },
   {
     name: "Kandy",
     image: kandyImage,
     description: "Sacred city of temples and rich cultural heritage",
-    slug: "kandy",
+    wikiUrl: "https://en.wikipedia.org/wiki/Kandy",
   },
 ];
 
@@ -194,7 +194,7 @@ const Index = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {destinations.map((destination) => (
-            <DestinationCard key={destination.slug} {...destination} />
+            <DestinationCard key={destination.name} {...destination} />
           ))}
         </div>
         <div className="text-center mt-12">
