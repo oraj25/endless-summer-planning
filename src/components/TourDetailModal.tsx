@@ -146,7 +146,7 @@ export const TourDetailModal = ({ tour, isOpen, onClose }: TourDetailModalProps)
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-3 pt-4">
           <Button variant="default" size="lg" className="flex-1" asChild>
-            <a href="/plan-trip">Book This Tour</a>
+            <a href="/contact">Contact Us to Book</a>
           </Button>
           <Button variant="outline" size="lg" onClick={onClose}>
             Close

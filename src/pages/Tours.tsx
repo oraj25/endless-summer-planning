@@ -99,11 +99,11 @@ const Tours = () => {
             Want Something Custom?
           </h2>
           <p className="text-primary-foreground/80 text-lg mb-10">
-            Can't find the perfect tour? Let us create a personalized itinerary tailored to your interests, budget, and travel style.
+            Can't find the perfect tour? Contact us directly and we'll create a personalized itinerary tailored to your interests, budget, and travel style.
           </p>
           <Button variant="sunset" size="xl" asChild>
-            <Link to="/plan-trip">
-              Plan Custom Trip
+            <Link to="/contact">
+              Contact Us
               <ArrowRight className="w-5 h-5" />
             </Link>
           </Button>
