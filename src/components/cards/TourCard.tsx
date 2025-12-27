@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Clock, Users, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -8,10 +7,9 @@ interface TourCardProps {
   image: string;
   description: string;
   duration: string;
-  groupSize: string;
   price: number;
-  slug: string;
   className?: string;
+  onViewDetails: () => void;
 }
 
 export const TourCard = ({
@@ -19,10 +17,9 @@ export const TourCard = ({
   image,
   description,
   duration,
-  groupSize,
   price,
-  slug,
   className,
+  onViewDetails,
 }: TourCardProps) => {
   return (
     <div
@@ -58,18 +55,12 @@ export const TourCard = ({
             <Clock className="w-4 h-4 text-primary" />
             <span>{duration}</span>
           </div>
-          <div className="flex items-center gap-1.5">
-            <Users className="w-4 h-4 text-primary" />
-            <span>{groupSize}</span>
-          </div>
         </div>
 
         {/* CTA */}
-        <Button variant="outline" className="w-full group/btn" asChild>
-          <Link to={`/tours/${slug}`}>
-            View Details
-            <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-          </Link>
+        <Button variant="outline" className="w-full group/btn" onClick={onViewDetails}>
+          View Details
+          <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
         </Button>
       </div>
     </div>

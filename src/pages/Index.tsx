@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Users, Award, Headphones, Compass, Leaf, Heart, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,14 +7,16 @@ import { DestinationCard } from "@/components/cards/DestinationCard";
 import { TourCard } from "@/components/cards/TourCard";
 import { TestimonialCard } from "@/components/cards/TestimonialCard";
 import { FeatureCard } from "@/components/cards/FeatureCard";
+import { TourDetailModal } from "@/components/TourDetailModal";
 import { Layout } from "@/components/layout/Layout";
+import { tours as allTours, TourData } from "@/data/toursData";
 
 import heroImage from "@/assets/hero-beach.jpg";
 import sigiriyaImage from "@/assets/sigiriya.jpg";
 import ellaImage from "@/assets/ella.jpg";
 import galleImage from "@/assets/galle.jpg";
 import kandyImage from "@/assets/kandy.jpg";
-import yalaImage from "@/assets/yala-safari.jpg";
+
 const destinations = [
   {
     name: "Sigiriya",
@@ -41,35 +44,9 @@ const destinations = [
   },
 ];
 
-const tours = [
-  {
-    name: "Cultural Triangle Explorer",
-    image: sigiriyaImage,
-    description: "Discover ancient cities, sacred temples, and UNESCO World Heritage sites",
-    duration: "7 Days",
-    groupSize: "2-12",
-    price: 899,
-    slug: "cultural-triangle",
-  },
-  {
-    name: "Wildlife Safari Adventure",
-    image: yalaImage,
-    description: "Encounter leopards, elephants, and exotic birds in their natural habitat",
-    duration: "5 Days",
-    groupSize: "2-8",
-    price: 749,
-    slug: "wildlife-safari",
-  },
-  {
-    name: "Coastal Paradise Escape",
-    image: galleImage,
-    description: "Beach hopping, whale watching, and coastal heritage exploration",
-    duration: "6 Days",
-    groupSize: "2-10",
-    price: 799,
-    slug: "coastal-paradise",
-  },
-];
+// Featured tours from main data
+const featuredTourSlugs = ["classic-tour", "wildlife-safari", "hill-country"];
+const tours = allTours.filter(t => featuredTourSlugs.includes(t.slug));
 
 const testimonials = [
   {
@@ -216,7 +193,15 @@ const Index = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tours.map((tour) => (
-            <TourCard key={tour.slug} {...tour} />
+            <TourCard 
+              key={tour.slug} 
+              name={tour.name}
+              image={tour.image}
+              description={tour.description}
+              duration={tour.duration}
+              price={tour.price}
+              onViewDetails={() => window.location.href = '/tours'}
+            />
           ))}
         </div>
         <div className="text-center mt-12">
