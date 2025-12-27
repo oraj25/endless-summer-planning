@@ -81,15 +81,18 @@ export const Navbar = () => {
             size="sm"
             asChild
           >
-            <Link to="/plan-trip">Plan Your Trip</Link>
+            <Link to="/contact">Contact Us</Link>
           </Button>
           <Button
             variant="whatsapp"
             size="sm"
             className="gap-2"
+            asChild
           >
-            <Phone className="w-4 h-4" />
-            WhatsApp
+            <a href="https://wa.me/+94770719741" target="_blank" rel="noopener noreferrer">
+              <Phone className="w-4 h-4" />
+              WhatsApp
+            </a>
           </Button>
         </div>
 
@@ -141,11 +144,13 @@ export const Navbar = () => {
           ))}
           <div className="flex flex-col gap-3 pt-4">
             <Button variant="default" size="lg" asChild>
-              <Link to="/plan-trip">Plan Your Trip</Link>
+              <Link to="/contact">Contact Us</Link>
             </Button>
-            <Button variant="whatsapp" size="lg" className="gap-2">
-              <Phone className="w-5 h-5" />
-              WhatsApp Us
+            <Button variant="whatsapp" size="lg" className="gap-2" asChild>
+              <a href="https://wa.me/+94770719741" target="_blank" rel="noopener noreferrer">
+                <Phone className="w-5 h-5" />
+                WhatsApp Us
+              </a>
             </Button>
           </div>
         </div>

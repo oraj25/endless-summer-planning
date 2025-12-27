@@ -128,7 +128,7 @@ const Index = () => {
                 </Link>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <Link to="/plan-trip">Plan Your Trip</Link>
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
@@ -239,18 +239,10 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="sunset" size="xl" asChild>
-              <Link to="/plan-trip">
-                Plan Your Trip
+              <Link to="/contact">
+                Contact Us
                 <ArrowRight className="w-5 h-5" />
               </Link>
-            </Button>
-            <Button
-              variant="heroOutline"
-              size="xl"
-              className="border-primary-foreground/50"
-              asChild
-            >
-              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>
